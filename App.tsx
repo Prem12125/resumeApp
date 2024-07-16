@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       {Platform.OS === 'ios' && <View style={styles.statusBar} />}
-      <StatusBar barStyle="dark-content" hidden={true} />
+      <StatusBar barStyle="light-content" hidden={false} />
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
@@ -19,7 +19,7 @@ const App = () => {
 const styles = StyleSheet.create({
   statusBar: {
     height: Platform.OS === 'ios' ? 20 : 0,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
   },
 });
 

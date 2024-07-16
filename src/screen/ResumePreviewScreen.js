@@ -37,7 +37,7 @@ const ResumePreviewScreen = ({ navigation }) => {
         <Text style={styles.appBarTitle}>Resume Preview</Text>
         <Button title="Back" onPress={() => navigation.goBack()} />
       </View>
-      <PopupMenu/>
+      {/* <PopupMenu/> */}
       <FlatList
         data={experiences}
         renderItem={({ item, index }) => (

@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, {useEffect} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, Easing } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -6,6 +7,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const SplashScreen = ({ navigation }) => {
   const fadeAnim = new Animated.Value(0);
   const starAnim = new Animated.Value(0);
+
+
+
+useEffect(() => {
+  // Simulate a loading process or API call
+  setTimeout(() => {
+    navigation.replace('Login');
+  }, 3000); // 3 seconds
+}, [navigation]);
+
 
   React.useEffect(() => {
     Animated.timing(fadeAnim, {
@@ -15,6 +26,7 @@ const SplashScreen = ({ navigation }) => {
     }).start();
 
     Animated.loop(
+      
       Animated.timing(starAnim, {
         toValue: 1,
         duration: 2000,
@@ -31,8 +43,8 @@ const SplashScreen = ({ navigation }) => {
   
 
   return (
-    <LinearGradient colors={['#203a43', '#0b2027']} style={styles.container}>
-      <View style={styles.topRightCircleContainer}>
+    <LinearGradient colors={['#434343', '#0b0b0b']} style={styles.container}>
+      {/* <View style={styles.topRightCircleContainer}>
         <View style={styles.outerCircle}>
           <View style={styles.innerCircle} />
         </View>
@@ -51,7 +63,7 @@ const SplashScreen = ({ navigation }) => {
         <View style={styles.outerCircle}>
           <View style={styles.innerCircle} />
         </View>
-      </View>
+      </View> */}
       
 
       <Animated.Image
@@ -59,7 +71,7 @@ const SplashScreen = ({ navigation }) => {
         style={{ ...styles.image, opacity: fadeAnim }}
       />
       <Text style={styles.text}>Welcome to MyApp</Text>
-      <View style={styles.buttonContainer}>
+      {/* <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('Login')}
@@ -76,7 +88,7 @@ const SplashScreen = ({ navigation }) => {
             <Text style={styles.buttonText}>Signup</Text>
           </LinearGradient>
         </TouchableOpacity>
-      </View>
+      </View> */}
     </LinearGradient>
   );
 };

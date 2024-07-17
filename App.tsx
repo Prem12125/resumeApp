@@ -1,14 +1,14 @@
 // App.js
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar, View, StyleSheet, Platform } from 'react-native';
 import AppNavigator from './AppNavigator';
-
+import React, { useEffect } from 'react';
 const App = () => {
+ 
   return (
     <>
       {Platform.OS === 'ios' && <View style={styles.statusBar} />}
-      <StatusBar barStyle="light-content" hidden={false} />
+      <StatusBar barStyle="light-content" hidden={true} />
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
@@ -24,3 +24,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
